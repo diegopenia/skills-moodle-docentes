@@ -108,11 +108,15 @@ Puede haber actividades duplicadas ocultas (visible = 0) sin fecha: repórtalas,
 Semana 1 = la semana que contiene el inicio del periodo; las semanas de receso no cuentan. Asigna la semana de cierre de cada actividad en este orden:
 1. `plan_semanas_<nrc>.json` adjunto.
 2. **Corrimiento del diseño anterior:** si las fechas actuales son de otro periodo, o el docente ya ajustó una parte, calcula el desplazamiento en semanas completas entre lo que el docente ya puso y el patrón anterior (p. ej. la Unidad 1 pasó del 30 de agosto al 25 de octubre = +8 semanas) y aplica el mismo corrimiento al resto. Así se conserva el diseño del curso (unidades de 2 semanas, examen final un viernes, etc.).
+   - **Valida el corrimiento antes de usarlo:** con él, la primera actividad debe caer en la semana 1-2 del periodo elegido y la última dentro de sus últimas semanas. Si no (por ejemplo, porque la actividad "ya ajustada" quedó en otro periodo), descártalo y calcula el corrimiento de semana 1 anterior a semana 1 nueva (lunes de la semana de inicio del periodo anterior → lunes de la semana de inicio del nuevo).
+   - Una actividad cuyas fechas no siguen el patrón del resto (de otro periodo, o ajustada a mano en otra semana) se marca como **fuera de patrón**: ubícala por su posición en la agenda y en la página de evaluación y, si su semana es dudosa, pregúntala.
 3. Página "Evaluación" del curso (o su equivalente): qué actividades forman cada parcial. Cada parcial debe cerrar antes del registro de notas que le corresponde.
 4. Si nada de lo anterior aplica: una actividad evaluativa por semana, en el orden de la agenda, y pregunta lo dudoso.
 
 Reglas al calcular:
+- Ninguna apertura antes del inicio del periodo. Si el lunes de la semana 1 es anterior al inicio (p. ej. el periodo empieza un martes porque el lunes es festivo), las actividades de esa semana abren el día de inicio del periodo; dilo en la tabla.
 - Si un cierre cae en festivo, márcalo y pregunta; no lo muevas por tu cuenta.
+- Para contar días hábiles antes de un registro de notas, descuenta sábados, domingos y festivos.
 - Ningún cierre después del fin del periodo ni del último registro de notas; márcalo si pasa.
 - Si una tarea ya tiene entregas y su nueva apertura queda en el futuro, avísalo (los demás estudiantes no podrán entregar hasta esa fecha).
 
