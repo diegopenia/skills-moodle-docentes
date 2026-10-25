@@ -55,8 +55,8 @@ Cómo saber qué cierre le aplica a cada uno:
 - **Ruta gratuita (con archivos):** si no hay navegador, pide al docente:
   1. El enunciado de la tarea (texto pegado o captura).
   2. La rúbrica completa con criterios, niveles y puntos (texto pegado o captura de "Calificación avanzada").
-  3. El ZIP de **"Descargar todas las entregas"** de la página de calificación de la tarea. Con "Descargar entregas en carpetas" (opción por defecto) trae una carpeta por estudiante con el formato `<Nombre completo>_<id>_assignsubmission_file`; en entregas por grupo usa el nombre del grupo.
-  4. La tabla de entregas (captura o texto) con estado, grupo, fechas y ampliaciones, para aplicar la regla de no entrega.
+  3. Las entregas: el ZIP de **"Descargar todas las entregas"** de la página de calificación de la tarea, o los archivos sueltos. Con "Descargar entregas en carpetas" (opción por defecto) el ZIP trae una carpeta por estudiante con el formato `<Nombre completo>_<id>_assignsubmission_file`; en entregas por grupo usa el nombre del grupo. Si llegan archivos sueltos, toma el nombre del estudiante del archivo o del encabezado del documento y confírmalo con el docente si hay duda.
+  4. La situación de cada estudiante para aplicar la regla de no entrega: la tabla de entregas (captura o texto) con estado, grupo, fechas y ampliaciones, o una descripción del docente ("Julián no entregó; Laura tiene ampliación hasta el 1 de noviembre").
   5. La fecha de entrega y la fecha límite de la tarea.
 
   Lee los archivos del ZIP con código (descomprime, extrae texto de PDF y Word, renderiza las páginas sin texto para verlas). Al final entrega el documento de aprobación y, para cada estudiante, el bloque listo para copiar en el calificador: nivel por criterio, comentario por criterio y retroalimentación general.
