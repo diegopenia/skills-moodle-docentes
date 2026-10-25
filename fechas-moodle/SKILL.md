@@ -103,6 +103,11 @@ Campos por tipo: tarea `allowsubmissionsfromdate`, `duedate`, `cutoffdate`, `gra
 
 Puede haber actividades duplicadas ocultas (visible = 0) sin fecha: repórtalas, no las toques.
 
+Notas verificadas en Moodle 5.3:
+- Los listados `/mod/<tipo>/index.php` redirigen a la página "Actividades" del curso (`/course/overview.php`). El fetch sigue la redirección y la expresión regular de cmid sigue funcionando; esa página también muestra las fechas tal como las ven los estudiantes.
+- Si un listado no trae los cmid, usa el servicio AJAX `core_courseformat_get_state` con `{courseid}`: devuelve `section[]` y `cm[]` (id, name, sectionid) del curso completo.
+- La salida de `javascript_tool` se bloquea si contiene textos con `clave=valor` o URL con parámetros: devuelve los resultados con `clave: valor` o en frases.
+
 ## Paso 4 — Plan de semanas
 
 Semana 1 = la semana que contiene el inicio del periodo; las semanas de receso no cuentan. Asigna la semana de cierre de cada actividad en este orden:
@@ -145,7 +150,8 @@ S('allowsubmissionsfromdate',2026,10,19,0,0); S('duedate',2026,10,25,23,59); S('
 document.querySelector('[name="submitbutton2"]').click(); 'ok'
 ```
 
-- Trabaja en lotes de 4 a 6 actividades (navegar → JS → esperar 3-4 s). Lotes más grandes pueden pasar el tiempo límite de la herramienta.
+- Trabaja en lotes pequeños (navegar → JS → esperar 3-4 s). Si la herramienta se corta por tiempo, baja a una actividad por llamada: un guardado puede completarse después del corte, así que verifica antes de seguir.
+- Foros calificados: si el guardado falla con un mensaje sobre "Requerir calificación" o la finalización de la actividad, guarda desde el formulario visible (clic en "Guardar cambios y regresar al curso") en lugar de enviarlo por fetch, y no cambies la configuración de finalización sin preguntar.
 - Si un lote se corta o alguna página no vuelve al curso, **no repitas a ciegas**: verifica primero (Paso 8) y reaplica solo lo pendiente.
 
 ## Paso 8 — Verificación y reporte
