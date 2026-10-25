@@ -17,8 +17,8 @@ Creadas por Diego Fernando Peña ([ORCID 0000-0001-8762-2563](https://orcid.org/
 
 1. **Activa la ejecución de código.** En [claude.ai](https://claude.ai), ve a Configuración > Capacidades y activa "Ejecución de código y creación de archivos" (en el diseño nuevo se llama "Crear y editar archivos"). Las skills no funcionan sin esto.
 2. **Descarga el ZIP de la skill** desde la sección [Releases](../../releases) de este repositorio: hay un ZIP por skill (`fechas-moodle.zip`, etc.). No uses el botón verde "Code > Download ZIP": ese descarga todo el repositorio y Claude espera una sola skill por ZIP.
-3. **Súbela.** Ve a Personalizar > Skills, pulsa "+", luego "Crear skill" y "Subir una skill", y elige el ZIP.
-4. **Actívala** con el interruptor que aparece junto a su nombre.
+3. **Súbela.** Ve a Configuración > Skills (o Personalización > Skills), pulsa "Agregar" y luego "Subir Skill", y elige el ZIP. Puedes subir varios a la vez. Claude hace un análisis de seguridad de cada archivo.
+4. **Comprueba que esté activada:** aparece en "Creado por ti"; al abrirla, el interruptor de arriba a la derecha debe estar encendido.
 5. **Pruébala.** En una conversación nueva escribe, por ejemplo: *"Usa la skill fechas-moodle. Te adjunto el calendario del periodo y la lista de actividades de mi curso. Muéstrame la tabla de cambios; no apliques nada."*
 
 Si la carga falla, revisa que el ZIP contenga una sola carpeta con el mismo nombre de la skill y dentro el archivo `SKILL.md`.
